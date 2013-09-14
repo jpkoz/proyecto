@@ -1,11 +1,11 @@
 <?php
 class PagoMensual extends AppModel {
-	var $name = 'Pago_mensual';
-	var $validate = array ();
-
+	var $name = 'PagoMensual';
+	 var $validate = array('nombre' => array('rule' => 'notEmpty'));
+//-----------------------------------------------------------
 	// RELACION PAGOMENSUAL:INTEGRANTE 1:N
 	
-	var $hasMany = array(
+	var $belongsTo = array(
 			'Integrante' => array(
 					'className'     => 'Integrante',
 					'foreignKey'    => 'integrante_id',

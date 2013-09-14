@@ -1,11 +1,12 @@
 <?php
 class Pregunta extends AppModel {
 	var $name = 'Pregunta';
-	var $validate = array ();
+	var $validate = array('nombre' => array('rule' =>'notEmpty'));
+    	
 	// RELACION PREGUNTA: PREGS_CIERRE 1:N
-	var $hasMany = array(
-			'Preg_cierre' => array(
-					'className'     => 'Preg_cierre',
+	var $belongsTo = array(
+			'PregCierre' => array(
+					'className'     => 'PregCierre',
 					'foreignKey'    => 'preg_cierre_id',
 							)
                     	);

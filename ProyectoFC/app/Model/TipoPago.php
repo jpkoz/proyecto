@@ -1,14 +1,15 @@
 <?php
 class TipoPago extends AppModel {
-	var $name = 'Tipo_Pago';
-	var $validate = array ();
+	var $name = 'TipoPago';
+		var $validate = array('descripcion' => array('rule' =>'notEmpty'));
+	//---------------------------
 	// RELACION TIPOPAGO:INTEGRANTE 1:N
-	var $hasMany = array(
+	var $belongsTo = array(
 			'Integrante' => array(
 					'className'     => 'Integrante',
 					'foreignKey'    => 'Integrante_id',
 							)
                     	);
 	
-}
+} 
 ?>

@@ -1,13 +1,15 @@
 <?php 
 class Desvio extends AppModel { 
-    var $name = ' Depto_gpo_dirs '; 
-    var $validate = array (); 
+    var $name = 'Desvio'; 
+     var $validate = array('descripcion' => array('rule' => 'notEmpty'),
+  		 'informe_de_avance' => array('rule' => 'notEmpty')); 
+     
 
     // RELACION DESVIO:INFORMEDEAVANCE 1:1 
     
    var $hasOne = array( 
-            'Informe_de_avance' => array( 
-                    'className'     => 'Informe_de_avance', 
+            'InformeDeAvance' => array( 
+                    'className'     => 'InformeDeAvance', 
                     'foreignKey'    => 'informe_de_avance_id', 
                             ) 
                         ); 
